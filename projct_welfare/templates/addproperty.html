@@ -1,0 +1,56 @@
+{% extends "user.html" %}
+{% block user %}
+
+    <table align="center"border="0">
+        <form action="{% url 'property' %}"method="post">
+            {% csrf_token %}
+
+        <tr>
+            <td align="center"style="background-color: darkblue;color: tomato;font-size: 30px"colspan="2">Add User Property</td>
+        </tr>
+        <tr>
+            <td colspan="2"style="color:gold">UserName:{{ pf.name }}</td>
+            <td>{{ pf.name.errors }}</td>
+        </tr>
+        <tr>
+            <td colspan="2"style="color:gold">property_Type:{{ pf.property_type }}</td>
+            <td>{{ pf.property_type.errors }}</td>
+        </tr>
+            <tr>
+                <td colspan="2"style="color:gold">property_Title:{{ pf.property_title }}</td>
+            <td>{{ pf.property_title.errors }}</td>
+            </tr>
+
+            <tr>
+            <td colspan="2"style="color:gold">Area_Size:{{ pf.area_size }}</td>
+            <td>{{ pf.area_size.errors }}</td>
+        </tr>
+            <tr>
+            <td colspan="2"style="color:gold">price:{{ pf.price }}</td>
+            <td>{{ pf.price.errors }}</td>
+        </tr>
+            <tr>
+            <td colspan="2"style="color:gold">Address:{{ pf.address }}</td>
+            <td>{{ pf.address.errors }}</td>
+        </tr>
+        <tr>
+            <td colspan="2"style="color:gold">Contact no:{{ pf.contactno }}  {{ pf.contactno.help_text }}</td>
+            <td>{{ pf.contactno.errors }}</td>
+        </tr>
+            <tr>
+            <td colspan="2"style="color:gold">Email:{{ pf.email }}</td>
+            <td>{{ pf.email.errors }}</td>
+        </tr>
+
+        <tr>
+            <td align="center"><button type="submit" class="btn btn-danger">Add Thoughts</button></td>
+
+        </tr>
+        </form>
+
+          </table>
+
+    {% for x in messages %}
+        <h2 align="center"style="color: springgreen">{{ x }}</h2>
+    {% endfor %}
+{% endblock %}

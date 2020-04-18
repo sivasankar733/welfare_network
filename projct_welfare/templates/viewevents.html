@@ -1,0 +1,23 @@
+{% extends "user.html" %}
+{% block user %}
+    <h1 align="center"style="color: deeppink">View User Event Information</h1>
+    <table align="center"border="2"style="background-color: lightskyblue">
+
+        <tr style="background-color: lawngreen">
+            <th>USER NAME</th>
+            <th>START DATE</th>
+            <th>END DATE</th>
+            <th>DESCRIPTION</th>
+            <th>CONTACT_NO</th>
+        </tr>
+    {% for x in em %}
+        <tr>
+            <td>{{ x.name }}</td>
+            <td>{{ x.startdate }}</td>
+            <td>{{ x.enddate }}</td>
+            <td>{{ x.description }}</td>
+            <td>{{ x.contactno }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

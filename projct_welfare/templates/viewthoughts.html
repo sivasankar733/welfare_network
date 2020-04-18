@@ -1,0 +1,25 @@
+{% extends "user.html" %}
+{% block user %}
+    <h1 align="center" style="background-color: blue">view user Thoughts</h1>
+    <table align="center"border="2"style="background-color: pink">
+
+        <tr>
+            <td>Name</td>
+
+            <td>Description</td>
+
+            <td>contact No</td>
+        </tr>
+              {% for x in usm %}
+        <tr>
+            <td>{{ x.name }}</td>
+
+            <td>{{ x.description }}</td>
+
+            <td>{{ x.contact }}</td>
+        </tr>
+        {% endfor %}
+  }
+    </table>
+
+{% endblock %}

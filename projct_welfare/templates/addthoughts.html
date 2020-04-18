@@ -1,0 +1,35 @@
+{% extends "user.html" %}
+{% block user %}
+
+    <table align="center"border="0">
+        <form action="{% url 'addthoughts' %}"method="post">
+            {% csrf_token %}
+
+        <tr>
+            <td align="center"style="background-color: darkblue;color: tomato;font-size: 40px"colspan="2">Add User Thoughts Information</td>
+        </tr>
+        <tr>
+            <td colspan="2"style="color:gold;font-size: 20px;">Name:{{ utf.name }}</td>
+            <td>{{ utf.name.errors }}</td>
+        </tr>
+        <tr>
+            <td colspan="2"style="color:gold;font-size: 20px;">Description:{{ utf.description }}</td>
+            <td>{{ utf.description.errors }}</td>
+        </tr>
+        <tr>
+            <td colspan="2"style="color:gold;font-size: 20px;">Contact no:{{ utf.contact }}  {{ utf.contact.help_text }}</td>
+            <td>{{ utf.contact.errors }}</td>
+
+        </tr>
+        <tr>
+            <td align="center"><button type="submit" class="btn btn-danger">Add Thoughts</button></td>
+            <td align="center"><a href="{% url 'index' %}" class="btn btn-danger">Clear</a></td>
+        </tr>
+        </form>
+
+          </table>
+
+    {% for x in messages %}
+        <h2 align="center"style="color: springgreen">{{ x }}</h2>
+    {% endfor %}
+{% endblock %}

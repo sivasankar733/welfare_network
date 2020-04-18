@@ -1,0 +1,23 @@
+{% extends "adminhome.html" %}
+{% block adminhome %}
+    <h1 align="center"style="color:cyan">View User Property</h1>
+    <table align="center"border="2"style="background-color: darkseagreen">
+        <tr style="background-color: khaki">
+            <th>USER NAME</th>
+            <th>COMPANY_NAME</th>
+            <th>SHARE_VALUE</th>
+            <th>DESCRIPTION</th>
+        </tr>
+        {% for x in sm %}
+            <tr>
+            <td>{{ x.name }}</td>
+            <td>{{ x.copmany_name }}</td>
+            <td>{{ x.share_value }}</td>
+            <td>{{ x.description }}</td>
+
+        </tr>
+        {% endfor %}
+
+    </table>
+
+{% endblock %}

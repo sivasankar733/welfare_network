@@ -1,0 +1,50 @@
+{% extends "common.html" %}
+{% block common %}<br><br>
+<table align="center"border="0">
+    <tr>
+        <td colspan="3" align="center"style="color: tomato;font-size: 40px">
+            Admin  Home Page
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="dropdown">
+  <button class="btn btn-primary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    USERS
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="{% url 'approval' %}">Approval User</a>
+    <a class="dropdown-item" href="{% url 'show_accept' %}">Accepted User</a>
+    <a class="dropdown-item" href="{% url 'show_reject' %}">Rejected User</a>
+  </div>
+</div>
+        </td>
+        <td>
+        <div class="dropdown">
+            <button class="btn btn-primary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    REPORTS
+  </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="{% url 'viewthoughts' %}">View Thoughts</a>
+    <a class="dropdown-item" href="{% url 'viewevents' %}">View Events</a>
+    <a class="dropdown-item" href="{% url 'viewtechnical' %}">View Technical</a>
+    <a class="dropdown-item" href="{% url 'viewworkexperience' %}">Work Experience</a>
+    <a class="dropdown-item" href="{% url 'viewproperty' %}">View Property</a>
+    <a class="dropdown-item" href="{% url 'viewsharemarket' %}">View Sharemarket</a>
+    <a class="dropdown-item" href="{% url 'viewreference' %}">View References</a>
+    <a class="dropdown-item" href="{% url 'viewmatrimonial' %}">View Matrimotional</a>
+    <a class="dropdown-item" href="{% url 'viewcelebrations' %}">View Celebrations</a>
+    <a class="dropdown-item" href="{% url 'viewtravel' %}">View Travel</a>
+            </div>
+        </div>
+        </td>
+        <td>
+        <div class="dropdown">
+</div>
+            <a href="{% url 'index' %}" class="btn btn-danger">Log Out</a>
+        </td>
+    </tr>
+</table>
+    {% block adminhome %}
+    {% endblock %}
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "adminhome.html" %}
+{% block adminhome %}
+    <h1 align="center"style="color:cyan">View User Matrimonial</h1>
+    <table align="center"border="2"style="background-color: papayawhip">
+        <tr style="background-color: khaki">
+            <th>BRIDE/BRIDEGROM_NAME</th>
+            <th>GENDER</th>
+            <th>DATE OF BIRTH</th>
+            <th>DESCRIPTION</th>
+            <th>CONTACT_NO</th>
+        </tr>
+        {% for x in mm %}
+            <tr>
+            <td>{{ x.name }}</td>
+            <td>{{ x.gender }}</td>
+            <td>{{ x.dob }}</td>
+            <td>{{ x.description }}</td>
+            <td>{{ x.contactno }}</td>
+
+        </tr>
+        {% endfor %}
+
+    </table>
+
+{% endblock %}

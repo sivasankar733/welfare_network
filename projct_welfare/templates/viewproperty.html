@@ -1,0 +1,30 @@
+{% extends "adminhome.html" %}
+{% block adminhome %}
+    <h1 align="center"style="color:deeppink">View User Property</h1>
+    <table align="center"border="2"style="background-color: darkseagreen">
+        <tr style="background-color: khaki">
+            <th>USER NAME</th>
+            <th>PROPERTY_TYPE</th>
+            <th>PROPERTY_TITLE</th>
+            <th>AREA_IN_SIZE</th>
+            <th>PRICE</th>
+            <th>ADDRESS</th>
+            <th>CONTACT_NO</th>
+            <th>EMAIL_ID</th>
+        </tr>
+        {% for x in ppm %}
+            <tr>
+            <td>{{ x.name }}</td>
+            <td>{{ x.property_type }}</td>
+            <td>{{ x.property_title }}</td>
+            <td>{{ x.area_size }}</td>
+            <td>{{ x.price }}</td>
+            <td>{{ x.address }}</td>
+            <td>{{ x.contactno }}</td>
+            <td>{{ x.email }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+{% endblock %}

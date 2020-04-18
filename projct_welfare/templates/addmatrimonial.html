@@ -1,0 +1,42 @@
+{% extends "user.html" %}
+{% block user %}
+      <form action="{% url 'addmatrimonial' %}"method="post">
+          {% csrf_token %}
+
+    <table align="center"border="0">
+
+
+        <tr>
+            <td align="center"style="background-color: darkblue;color: tomato;font-size: 30px"colspan="2">Add User Matrimonial</td>
+        </tr>
+        <tr>
+            <td colspan="2"style="color:gold">UserName:{{ mf.brifegrom_name }}</td>
+            <td>{{ mf.brifegrom_name.errors }}</td>
+        </tr>
+        <tr>
+            <td colspan="2"style="color:gold">Gender{{ mf.gender }}{{ mf.gender.help_text }}</td>
+            <td>{{ mf.gender.errors }}</td>
+        </tr>
+             <tr>
+            <td colspan="2"style="color:gold">date of birth:{{ mf.dob }}{{ mf.dob.help_text }}</td>
+            <td>{{ mf.dob.errors }}</td>
+        </tr>
+
+            <tr>
+            <td colspan="2"style="color:gold">Description:{{ mf.description }}</td>
+            <td>{{ mf.description.errors }}</td>
+          <tr>
+                <td colspan="2"style="color:gold">Contactno:{{ mf.contactno }}{{ mf.contactno.help_text }}</td>
+            <td>{{ mf.contactno.errors }}</td>
+            </tr>
+
+        <tr>
+            <td align="center"><button type="submit" class="btn btn-danger">Add matrimonial</button></td>
+
+        </tr>
+          </table>
+      </form>
+    {% for x in messages %}
+        <h2 align="center"style="color: springgreen">{{ x }}</h2>
+    {% endfor %}
+{% endblock %}

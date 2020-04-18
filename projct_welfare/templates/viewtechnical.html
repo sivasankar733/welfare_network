@@ -1,0 +1,23 @@
+{% extends "adminhome.html" %}
+{% block adminhome %}
+    <h1 align="center"style="color: palegreen">View User Technical</h1>
+    <table align="center"border="2" style="background-color: mistyrose">
+        <tr style="background-color: dodgerblue">
+            <th>USER NAME</th>
+            <th>TECHNOLOGY</th>
+            <th>DESCRIPTION</th>
+            <th>CONTACT NO</th>
+        </tr>
+        {% for x in tm %}
+            <tr>
+            <td>{{ x.name }}</td>
+            <td>{{ x.technology }}</td>
+            <td>{{ x.description }}</td>
+            <td>{{ x.contactno }}</td>
+
+        </tr>
+        {% endfor %}
+
+    </table>
+
+{% endblock %}

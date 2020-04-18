@@ -1,0 +1,44 @@
+{% extends "user.html" %}
+{% block user %}
+      <form action="{% url 'addtravel' %}"method="post">
+          {% csrf_token %}
+
+    <table align="center"border="0">
+
+
+        <tr>
+            <td align="center"style="background-color: darkblue;color: tomato;font-size: 30px"colspan="2">Add User Travel</td>
+        </tr>
+        <tr>
+            <td colspan="2"style="color:gold">UserName:{{ tf.name }}</td>
+            <td>{{ tf.name.errors }}</td>
+        </tr>
+        <tr>
+            <td colspan="2"style="color:gold">Travel_data:{{ tf.travel_date }}{{ tf.travel_date.help_text }}</td>
+            <td>{{ tf.travel_date.errors }}</td>
+        </tr>
+       <tr>
+                <td colspan="2"style="color:gold">Location:{{ tf.location }}</td>
+            <td>{{ tf.location.errors }}</td>
+            </tr>
+         <tr>
+                <td colspan="2"style="color:gold">Description:{{ tf.description }}</td>
+            <td>{{ tf.description.errors }}</td>
+            </tr>
+         <tr>
+                <td colspan="2"style="color:gold">Contactno:{{ tf.contactno }}{{ tf.contactno.help_text }}</td>
+            <td>{{ tf.contactno.errors }}</td>
+            </tr>
+
+
+
+        <tr>
+            <td align="center"><button type="submit" class="btn btn-danger">Add travel</button></td>
+
+        </tr>
+          </table>
+      </form>
+    {% for x in messages %}
+        <h2 align="center"style="color: springgreen">{{ x }}</h2>
+    {% endfor %}
+{% endblock %}

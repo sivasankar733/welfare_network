@@ -1,0 +1,40 @@
+{% extends "user.html" %}
+{% block user %}
+      <form action="{% url 'addsharemarket' %}"method="post">
+          {% csrf_token %}
+
+    <table align="center"border="0">
+
+
+        <tr>
+            <td align="center"style="background-color: darkblue;color: tomato;font-size: 30px"colspan="2">Add User Share Market</td>
+        </tr>
+        <tr>
+            <td colspan="2"style="color:gold">UserName:{{ sf.name }}</td>
+            <td>{{ sf.name.errors }}</td>
+        </tr>
+        <tr>
+            <td colspan="2"style="color:gold">Company Name:{{ sf.copmany_name }}</td>
+            <td>{{ sf.copmany_name.errors }}</td>
+        </tr>
+            <tr>
+                <td colspan="2"style="color:gold">Share_value:{{ sf.share_value }}</td>
+            <td>{{ sf.share_value.errors }}</td>
+            </tr>
+
+            <tr>
+            <td colspan="2"style="color:gold">Description:{{ sf.description }}</td>
+            <td>{{ sf.description.errors }}</td>
+
+        <tr>
+            <td align="center"><button type="submit" class="btn btn-danger">Add sharemarket</button></td>
+
+        </tr>
+
+
+          </table>
+      </form>
+    {% for x in messages %}
+        <h2 align="center"style="color: springgreen">{{ x }}</h2>
+    {% endfor %}
+{% endblock %}

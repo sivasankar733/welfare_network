@@ -1,0 +1,69 @@
+{% extends "common.html" %}
+{% block common %}<br>
+    <table  align="center" border="0" >
+        <tr>
+            <td align="center" style="color: tomato;font-size: 50px;background-color: aqua"colspan="12">
+                User  Home Page
+            </td>
+        </tr>
+
+        <tr>
+            <td >
+                <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"style="font-size: 13px">
+ Thoughts</button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="{% url 'addthoughts' %}">Add Thoughts</a>
+    <a class="dropdown-item" href="{% url 'viewthoughts' %}">View Thoughts</a>
+
+  </div>
+</div>
+            </td>
+            <td >
+                <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"style="font-size: 13px">
+      Events
+  </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="{% url 'addevents' %}">Add Events</a>
+    <a class="dropdown-item" href="{% url 'viewevents' %}">View Events</a>
+
+  </div>
+</div>
+            </td>
+            <td >
+                <a href="{% url 'technicaladd' %}" class="btn btn-primary "  style="font-size: 13px">Technical</a>
+            </td>
+            <td >
+                <a href="{% url 'workexperience' %}" class="btn btn-primary " type="button" style="font-size: 13px">Work Experience</a>
+            </td>
+            <td >
+                <a class="btn btn-primary "href="{% url 'property' %}" style="font-size: 13px">Property</a>
+            </td>
+            <td >
+                <a class="btn btn-primary " href="{% url 'addsharemarket' %}" style="font-size: 13px">Share Market</a>
+            </td>
+            <td >
+               <a class="btn btn-primary " href="{% url 'addreference' %}" style="font-size: 13px">Reference</a>
+
+            </td>
+            <td >
+                <a class="btn btn-primary "href="{% url 'addmatrimonial' %}" style="font-size: 13px">Matrimonial</a>
+
+            </td>
+            <td >
+                <a class="btn btn-primary " href="{% url 'addcelebrations' %}" style="font-size: 13px">Celebrations</a>
+
+            </td>
+            <td >
+                <a href="{% url 'addtravel' %}" class="btn btn-primary "style="font-size: 13px">Travel</a>
+
+            </td>
+
+              <td><a href="{% url 'index' %}" class="btn btn-danger">Logout</a></td>
+        </tr>
+    </table>
+    {% block user %}
+    {% endblock %}
+
+{% endblock %}

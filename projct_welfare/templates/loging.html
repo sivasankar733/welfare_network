@@ -1,0 +1,46 @@
+{% extends 'common.html' %}
+{% block common %}<br>
+
+
+        <table align="center"border="2"style=";background-color: violet">
+        <form action="{% url 'adminlog' %}"method="post">
+         {% csrf_token %}
+        <tr>
+            <td align="center"style="color: orangered;font-size: 40px"colspan="2">LOGING PAGE</td>
+        </tr>
+        <tr>
+            <td style="color: aqua;font-size:20px"colspan="2">User Name:
+           <input type="text" placeholder="username"required name="t1">
+        </tr><br><br>
+        <tr>
+            <td style="color: aqua;font-size:20px"colspan="2">Password:
+               <input type="password"placeholder="password"required name="t2">
+            </td>
+        </tr><br>
+        <tr>
+            <td style="color: aqua;font-size:20px"colspan="2">User Type:
+                <select required name="t3">
+                    <option>admin</option>
+                    <option>user</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="center"><button type="submit" class="btn btn-danger">Login</button></td>
+
+            <td align="center"><a href="{% url "index" %}" class="btn btn-danger">Clear</a></td>
+        </tr>
+        <tr>
+            <td colspan="2"align="center"style="font-size: 20px;color: green"><a href="{% url 'registeruser' %}" >Register New User</a></td>
+        </tr>
+        </form>
+
+        </table>
+
+
+
+    {% for x in messages %}
+        <h2 align="center" style="color: hotpink">{{ x }}</h2>
+    {% endfor %}
+
+{% endblock %}

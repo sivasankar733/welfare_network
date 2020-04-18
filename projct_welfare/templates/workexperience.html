@@ -1,0 +1,39 @@
+{% extends "user.html" %}
+{% block user %}
+    <table align="center"style="background-color: lightgrey ">
+    <form action="{% url 'workexperience' %}"method="post">
+        {% csrf_token %}
+        <tr>
+            <td align="center"style="color:red;font-size: 20px">Work Experience User Technical</td>
+        </tr>
+        <tr>
+            <td>User Name:{{ wf.name }}</td>
+            <td>{{ wf.name.errors }}</td>
+        </tr>
+        <tr>
+            <td>Technology:{{ wf.technology }}</td>
+            <td>{{ wf.technology.errors }}</td>
+        </tr>
+        <tr>
+            <td>Work Experience:{{ wf.workexperience }}</td>
+            <td>{{ wf.workexperience.errors }}</td>
+        </tr>
+        <tr>
+            <td>Description:{{ wf.description }}</td>
+            <td>{{ wf.description.errors }}</td>
+        </tr>
+        <tr>
+            <td>Contact No:{{ wf.contactno }}{{ wf.contactno.help_text }}</td>
+            <td>{{ wf.contactno.errors }}</td>
+        <
+        <tr>
+            <td align="center"><button type="submit" class="btn btn-danger">Work Experience</button></td>
+            <td align="center"><a href="{% url 'index' %}" class="btn btn-danger">Clear</a></td>
+        </tr>
+    </form>
+    </table>
+
+    {% for x in messages %}
+        <h4 align="center"style="color: aqua">{{ x }}</h4>
+    {% endfor %}
+{% endblock %}

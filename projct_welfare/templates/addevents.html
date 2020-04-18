@@ -1,0 +1,38 @@
+{% extends "user.html" %}
+{% block user %}
+    <form action="{% url 'addevents' %}"method="post">
+        {% csrf_token %}
+        <table align="center"style="color: darkblue;background-color: blanchedalmond">
+        <tr>
+            <td align="center" style="color: green;font-size: 20px;">Add User Eventss</td>
+        </tr>
+        <tr>
+            <td>User name:{{ ef.name }}</td>
+            <td>{{ ef.name.errors }}</td>
+        </tr>
+        <tr>
+            <td>Start date:{{ ef.startdate }}{{ ef.startdate.help_text }}</td>
+            <td>{{ ef.startdate.errors }}</td>
+        </tr>
+        <tr>
+            <td>End date:{{ ef.enddate }}{{ ef.startdate.help_text }}</td>
+            <td>{{ ef.enddate.errors }}</td>
+        </tr>
+        <tr>
+            <td>Description{{ ef.description }}</td>
+            <td>{{ ef.description.errors }}</td>
+        </tr>
+        <tr>
+            <td>Contact No:{{ ef.contactno }}</td>
+            <td>{{ ef.contactno.errors }}</td>
+        </tr>
+       <tr>
+            <td align="center"><button type="submit" class="btn btn-danger">Add Thoughts</button></td>
+            <td align="center"><a href="{% url 'index' %}" class="btn btn-danger">Clear</a></td>
+        </tr>
+    </table>
+    </form>
+    {% for x in messages %}
+        <h3 align="center"style="color: deeppink">{{ x }}</h3>
+    {% endfor %}
+{% endblock %}

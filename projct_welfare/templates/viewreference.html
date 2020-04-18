@@ -1,0 +1,23 @@
+{% extends "adminhome.html" %}
+{% block adminhome %}
+    <h1 align="center"style="color:cyan">View User Reference</h1>
+    <table align="center"border="2"style="background-color: papayawhip">
+        <tr style="background-color: khaki">
+            <th>USER NAME</th>
+            <th>JOB_TITLE</th>
+            <th>DESCRIPTION</th>
+            <th>LAST DATE</th>
+        </tr>
+        {% for x in rm %}
+            <tr>
+            <td>{{ x.name }}</td>
+            <td>{{ x.job_title }}</td>
+            <td>{{ x.description }}</td>
+            <td>{{ x.lastdate }}</td>
+
+        </tr>
+        {% endfor %}
+
+    </table>
+
+{% endblock %}
